@@ -86,7 +86,6 @@
         },
 
         onKey: function (event) {
-            console.log(event.which);
             var direction;
             switch (event.which) {
                 case 37: direction = 'left'; break;
