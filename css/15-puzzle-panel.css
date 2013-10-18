@@ -1,0 +1,22 @@
+.fifteen-puzzle-panel {}
+
+.fifteen-puzzle-panel .shuffle {
+    margin-right: 20px;
+}
+
+.fifteen-puzzle-panel.puzzle-unsolvable .solvable {
+    display: none;
+}
+.fifteen-puzzle-panel.puzzle-solvable .unsolvable {
+    display: none;
+}
+
+.fifteen-puzzle-panel input.moves,
+.fifteen-puzzle-panel input.distance {
+    width: 6em;
+    text-align: center;
+}
+
+.fifteen-puzzle-panel.not-solved .solved {
+    display: none;
+}

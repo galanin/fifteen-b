@@ -1,0 +1,25 @@
+.fifteen-puzzle-board {
+    position: relative;
+    border: 0px solid #f0f0f0;
+}
+
+.fifteen-puzzle-board > .fifteen-puzzle-tile {
+    position: absolute;
+    color: #808080;
+    background-color: #f0f0f0;
+    border: 6px solid #ececec;
+    border-radius: 7px;
+    text-align: center;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.fifteen-puzzle-board > .fifteen-puzzle-tile.movable {
+    cursor: pointer;
+}
