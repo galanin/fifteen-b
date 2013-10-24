@@ -16,33 +16,40 @@
     <body>
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <h4 class="navbar-text">Fifteen Puzzle</h4>
-      <ul class="nav navbar-nav puzzle-dimension">
-        <li><a href="#2x2">2&times;2</a></li>
-        <li><a href="#2x3">2&times;3</a></li>
-        <li><a href="#2x4">2&times;4</a></li>
-        <li><a href="#2x5">2&times;5</a></li>
-        <li><a href="#2x6">2&times;6</a></li>
-        <li><a href="#3x3">3&times;3</a></li>
-        <li><a href="#3x4">3&times;4</a></li>
-        <li><a href="#3x5">3&times;5</a></li>
-        <li class="active"><a href="#4x4">4&times;4</a></li>
-        <li><a href="#4x5">4&times;5</a></li>
-        <li><a href="#5x5">5&times;5</a></li>
-        <li><a href="#6x6">6&times;6</a></li>
-        <li><a href="#7x7">7&times;7</a></li>
-      </ul>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-dimension-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Fifteen Puzzle</span>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-dimension-collapse">
+        <ul class="nav navbar-nav puzzle-dimension">
+          <li><a href="#2x2">2&times;2</a></li>
+          <li><a href="#2x4">2&times;4</a></li>
+          <li><a href="#2x6">2&times;6</a></li>
+          <li><a href="#3x3">3&times;3</a></li>
+          <li><a href="#3x5">3&times;5</a></li>
+          <li class="active"><a href="#4x4">4&times;4</a></li>
+          <li><a href="#5x5">5&times;5</a></li>
+          <li><a href="#6x6">6&times;6</a></li>
+          <li><a href="#7x7">7&times;7</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="container">
       <div class="fifteen-puzzle"></div>
     </div>
 
-    <div class="navbar navbar-default navbar-fixed-bottom">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
       <ul class="nav navbar-nav">
         <li><a href="https://github.com/galanin/fifteen-b" target="_blank">View source code</a></li>
       </ul>
-    </div>
+    </nav>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.js"><\/script>')</script>
