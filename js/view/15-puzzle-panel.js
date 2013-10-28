@@ -29,6 +29,7 @@
 
         render: function() {
             this.$el.html(this.template());
+            this.$shuffle = this.$('.shuffle');
             this.$turns = this.$('input.moves');
             this.$distance = this.$('input.distance');
             this.$permalink = this.$('a.permalink');
@@ -38,6 +39,7 @@
 
         shuffle: function () {
             this.model.shuffle();
+            this.$shuffle.blur();
         },
 
         onInitialize: function () {

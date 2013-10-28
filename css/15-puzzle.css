@@ -1,15 +1,6 @@
-body > .container {
-    margin: 70px 50px;
-}
-
-button {
-    outline: 0 none;
-}
-
 .fifteen-puzzle {
-    float: left;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 70px 50px;
 }
 
 .fifteen-puzzle .fifteen-puzzle-board {
