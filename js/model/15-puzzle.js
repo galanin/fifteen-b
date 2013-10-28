@@ -257,6 +257,7 @@
         _.each(turns, function (turn, dir) {
             turn.dir = dir;
             turn.n = self.index[turn.y][turn.x].n;
+            turn.isGoal = self.index[turn.y][turn.x].isGoal();
             var newBoard = new Board(self);
             newBoard.turn(dir);
             turn.distance = newBoard.getDistance();

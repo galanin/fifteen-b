@@ -61,7 +61,7 @@
                 var distance = this.board.getDistance();
                 this.possibleTurns[hash] = this.board.getPossibleTurns();
                 _.each(this.possibleTurns[hash], function (turn) {
-                    turn.prio = turn.distance - distance;
+                    turn.prio = turn.distance - distance + turn.isGoal;
                 });
             }
             return this.possibleTurns[hash];
