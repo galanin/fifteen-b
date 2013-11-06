@@ -17,8 +17,7 @@
     ),
 
         events: {
-            'click button.shuffle': 'onUiClickShuffle',
-            'click button.solve': 'solve'
+            'click button.shuffle': 'onUiClickShuffle'
         },
 
         initialize: function (options) {

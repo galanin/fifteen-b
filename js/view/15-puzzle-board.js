@@ -9,7 +9,7 @@
             'line-height:<%=lineHeight%>px; border-width:<%=borderWidth%>px"><%=i%></div>'),
 
         events: {
-            'click .movable': 'onUiClickTile',
+            'click .movable': 'onUiClickTile'
         },
 
         initialize:function (options) {
