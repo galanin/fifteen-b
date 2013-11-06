@@ -25,7 +25,7 @@
                 puzzleSolverPanel.render();
                 this.el.append(puzzleBoard.$el).append(puzzlePanel.$el).append(puzzleSolverPanel.$el);
             }
-            this.highlightNav(options.width, options.height);
+            this.highlightNavigation(options.width, options.height);
         },
 
         _prepareOptions: function (width, height, position) {
@@ -44,7 +44,7 @@
             return { width: width, height: height, position: starting_position };
         },
 
-        highlightNav: function (width, height) {
+        highlightNavigation: function (width, height) {
             var dim = '' + width + 'x' + height;
 
             var prev = this.nav.find('.active');

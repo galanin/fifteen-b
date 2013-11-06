@@ -6,16 +6,16 @@
         initialize: function (options) {
             this.board = options.board;
             this.possibleTurns = [];
-            this.board.on('initialize', this.onInitialize, this);
-            this.board.on('turn', this.onTurn, this);
+            this.board.on('initialize', this.onBoardInitialize, this);
+            this.board.on('turn', this.onBoardTurn, this);
         },
 
-        onInitialize: function () {
+        onBoardInitialize: function () {
             this.stop();
             this.possibleTurns = [];
         },
 
-        onTurn: function () {
+        onBoardTurn: function () {
             if (this.board.isSolved()) {
                 this.stop();
             }

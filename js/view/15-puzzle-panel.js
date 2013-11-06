@@ -17,14 +17,14 @@
     ),
 
         events: {
-            'click button.shuffle': 'shuffle',
+            'click button.shuffle': 'onUiClickShuffle',
             'click button.solve': 'solve'
         },
 
         initialize: function (options) {
             this.boardView = options.boardView;
-            this.model.on('initialize', this.onInitialize, this);
-            this.model.on('turn', this.onTurn, this);
+            this.model.on('initialize', this.onBoardInitialize, this);
+            this.model.on('turn', this.onBoardTurn, this);
         },
 
         render: function() {
@@ -34,28 +34,28 @@
             this.$distance = this.$('input.distance');
             this.$permalink = this.$('a.permalink');
 
-            this.onInitialize();
+            this.onBoardInitialize();
         },
 
-        shuffle: function () {
+        onUiClickShuffle: function () {
             this.model.shuffle();
             this.$shuffle.blur();
         },
 
-        onInitialize: function () {
+        onBoardInitialize: function () {
             var isSolvable = this.model.testSolubility();
             this.$el.toggleClass('puzzle-solvable', isSolvable);
             this.$el.toggleClass('puzzle-unsolvable', !isSolvable);
             this.turns = 0;
-            this._syncPositionInfo();
+            this.refresh();
         },
 
-        onTurn: function () {
+        onBoardTurn: function () {
             ++this.turns;
-            this._syncPositionInfo();
+            this.refresh();
         },
         
-        _syncPositionInfo: function () {
+        refresh: function () {
             this.$turns.val(this.turns);
             this.$distance.val(this.model.getDistance());
 

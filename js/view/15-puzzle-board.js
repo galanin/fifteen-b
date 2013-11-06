@@ -9,7 +9,7 @@
             'line-height:<%=lineHeight%>px; border-width:<%=borderWidth%>px"><%=i%></div>'),
 
         events: {
-            'click .movable': 'onClickTile',
+            'click .movable': 'onUiClickTile',
         },
 
         initialize:function (options) {
@@ -21,10 +21,10 @@
             for (p in this.options) {
                 if (p in options) this.options[p] = options[p];
             }
-            this.model.on('turn', this.onTurn, this);
-            this.model.on('initialize', this.onInitialize, this);
-            this.model.on('changeBoard', this.onChangeBoard, this);
-            $(root.document).on('keyup', _.bind(this.onKey, this));
+            this.model.on('turn', this.onBoardTurn, this);
+            this.model.on('initialize', this.onBoardInitialize, this);
+            this.model.on('changeBoard', this.onBoardChange, this);
+            $(root.document).on('keyup', _.bind(this.onUiKeyUp, this));
         },
 
         render: function () {
@@ -81,11 +81,11 @@
             });
         },
 
-        onClickTile: function (event) {
+        onUiClickTile: function (event) {
             this.model.turn($(event.target).attr('data-move-direction'));
         },
 
-        onKey: function (event) {
+        onUiKeyUp: function (event) {
             var direction;
             switch (event.which) {
                 case 37: direction = 'left'; break;
@@ -101,7 +101,7 @@
             }
         },
 
-        onTurn: function (tileNum, newX, newY) {
+        onBoardTurn: function (tileNum, newX, newY) {
             this._cleanupTileStyles();
             var newLeft = this._getD(newX);
             var newTop = this._getD(newY);
@@ -113,13 +113,13 @@
                 }, 90, _setupTileStyles);
         },
 
-        onInitialize: function () {
+        onBoardInitialize: function () {
             this._cleanupTileStyles();
             this.refreshTiles();
             this._setupTileStyles();
         },
 
-        onChangeBoard: function () {
+        onBoardChange: function () {
             this.render();
         }
     });

@@ -10,12 +10,12 @@
         ),
 
         events: {
-            'click button.solve': 'solve'
+            'click button.solve': 'onUiClickSolve'
         },
 
         initialize: function (options) {
-            this.model.on('start', this.onStart, this);
-            this.model.on('stop', this.onStop, this);
+            this.model.on('start', this.onSolverStart, this);
+            this.model.on('stop', this.onSolverStop, this);
         },
 
         render: function () {
@@ -24,7 +24,7 @@
             this.$step = this.$('.step-by-step');
         },
 
-        solve: function () {
+        onUiClickSolve: function () {
             if (this.$solve.hasClass('active')) {
                 this.model.stop();
             }
@@ -39,12 +39,12 @@
             }
         },
 
-        onStart: function () {
+        onSolverStart: function () {
             this.$solve.addClass('active').blur();
             this.$step.prop('disabled', true);
         },
 
-        onStop: function () {
+        onSolverStop: function () {
             this.$solve.removeClass('active').blur();
             this.$step.prop('disabled', false);
         }
